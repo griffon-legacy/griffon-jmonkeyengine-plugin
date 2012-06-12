@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2011 the original author or authors.
+ * Copyright 2009-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,17 +23,3 @@ eventCreateConfigEnd = {
         buildConfig.griffon.application.mainClass = 'griffon.plugins.jme.SimpleGameGriffonApplication'
     }
 }
-
-def eventClosure1 = binding.variables.containsKey('eventSetClasspath') ? eventSetClasspath : {cl->}
-eventSetClasspath = { cl ->
-    eventClosure1(cl)
-    if(compilingPlugin('jmonkeyengine')) return
-    griffonSettings.dependencyManager.flatDirResolver name: 'griffon-jmonkeyengine-plugin', dirs: "${jmonkeyenginePluginDir}/addon"
-    griffonSettings.dependencyManager.addPluginDependency('jmonkeyengine', [
-        conf: 'compile',
-        name: 'griffon-jmonkeyengine-addon',
-        group: 'org.codehaus.griffon.plugins',
-        version: jmonkeyenginePluginVersion
-    ])
-}
-
