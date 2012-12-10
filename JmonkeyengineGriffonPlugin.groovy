@@ -19,11 +19,11 @@
  */
 class JmonkeyengineGriffonPlugin {
     // the plugin version
-    String version = "0.3"
+    String version = "0.3.2"
     // the version or versions of Griffon the plugin is designed for
-    String griffonVersion = '1.0.0 > *' 
+    String griffonVersion = '1.1.0 > *'
     // the other plugins this plugin depends on
-    Map dependsOn = [swing: '1.0.0', lwjgl: '0.5']
+    Map dependsOn = [swing: '1.1.0', lwjgl: '1.0.0']
     // resources that are included in plugin packaging
     List pluginIncludes = []
     // the plugin license

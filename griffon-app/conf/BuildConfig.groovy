@@ -5,22 +5,31 @@ griffon.project.dependency.resolution = {
         griffonHome()
         mavenCentral()
         mavenRepo 'http://nifty-gui.sourceforge.net/nifty-maven-repo'
-        String basePath = pluginDirPath? "${pluginDirPath}/" : ''
+        String basePath = pluginDirPath ? "${pluginDirPath}/" : ''
         flatDir name: "jmonkeyenginePluginLib", dirs: ["${basePath}lib"]
     }
     dependencies {
         runtime('lessvoid:nifty:1.3.1') { exclude 'xpp3' }
         runtime 'xpp3:xpp3_min:1.1.4c',
                 'de.jarnbjo:j-ogg-all:1.0',
-                'com.bulletphysics:jbullet:20101010',
+                'com.bulletphysics:jbullet:20110211',
                 'cz.advel:stack-alloc:20101010',
                 'javax.vecmath:vecmath:1.4.0',
-                'com.jcraft:jorbis:0.0.17',
-                'com.fluendo:jheora:0.2.2',
                 'lessvoid:nifty-default-controls:1.3.1',
                 'lessvoid:nifty-style-black:1.3.1'
-        compile 'com.jme3:jmonkeyengine:3.0-BETA',
-                'com.jme3:jme3-jbullet:3.0-BETA'
+        compile 'com.jme3:jME3-blender:3.0-BETA',
+                'com.jme3:jME3-core:3.0-BETA',
+                'com.jme3:jME3-desktop:3.0-BETA',
+                'com.jme3:jME3-effects:3.0-BETA',
+                'com.jme3:jME3-jbullet:3.0-BETA',
+                'com.jme3:jME3-jogg:3.0-BETA',
+                'com.jme3:jME3-lwjgl:3.0-BETA',
+                'com.jme3:jME3-lwjgl-natives:3.0-BETA',
+                'com.jme3:jME3-networking-3.0:BETA',
+                'com.jme3:jME3-niftygui-3.0:BETA',
+                'com.jme3:jME3-plugins-3.0:BETA',
+                'com.jme3:jME3-terrain-3.0:BETA',
+                'com.jme3:jME3-testdata-3.0:BETA'
     }
 }
 
@@ -40,8 +49,8 @@ log4j = {
     }
 
     error 'org.codehaus.griffon',
-          'org.springframework',
-          'org.apache.karaf',
-          'groovyx.net'
-    warn  'griffon'
+            'org.springframework',
+            'org.apache.karaf',
+            'groovyx.net'
+    warn 'griffon'
 }
